@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://mbostock.github.io/d3/talk/20111018/tree.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link type="text/css" rel="stylesheet" href="./tree_files/style.css">
+    <script type="text/javascript" src="./tree_files/d3.js"></script>
+    <script type="text/javascript" src="./tree_files/d3.layout.js"></script>
+    <style type="text/css">
+
+
+.node circle {
+  cursor: pointer;
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size: 11px;
+}
+
+path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+    </style>
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+  <body>
+    <div id="body">
+      <div id="footer">
+        d3.layout.tree
+        <div class="hint">click or option-click to expand or collapse</div>
+      </div>
+    <svg width="1280" height="800"><g transform="translate(120,20)"><path class="link" d="M360,528.695652173913C450,528.695652173913 450,462.60869565217394 540,462.60869565217394"></path><path class="link" d="M360,528.695652173913C450,528.695652173913 450,495.6521739130435 540,495.6521739130435"></path><path class="link" d="M360,528.695652173913C450,528.695652173913 450,528.695652173913 540,528.695652173913"></path><path class="link" d="M360,528.695652173913C450,528.695652173913 450,561.7391304347826 540,561.7391304347826"></path><path class="link" d="M360,528.695652173913C450,528.695652173913 450,594.7826086956522 540,594.7826086956522"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,528.695652173913 360,528.695652173913"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,561.7391304347826 360,561.7391304347826"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,594.7826086956522 360,594.7826086956522"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,627.8260869565217 360,627.8260869565217"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,660.8695652173913 360,660.8695652173913"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,693.9130434782609 360,693.9130434782609"></path><path class="link" d="M180,627.8260869565217C270,627.8260869565217 270,726.9565217391305 360,726.9565217391305"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,33.04347826086956 540,33.04347826086956"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,66.08695652173913 540,66.08695652173913"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,99.13043478260869 540,99.13043478260869"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,132.17391304347825 540,132.17391304347825"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,165.2173913043478 540,165.2173913043478"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,198.26086956521738 540,198.26086956521738"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,231.30434782608697 540,231.30434782608697"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,264.3478260869565 540,264.3478260869565"></path><path class="link" d="M360,165.2173913043478C450,165.2173913043478 450,297.3913043478261 540,297.3913043478261"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,99.13043478260869 360,99.13043478260869"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,132.17391304347825 360,132.17391304347825"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,165.2173913043478 360,165.2173913043478"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,198.26086956521738 360,198.26086956521738"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,231.30434782608697 360,231.30434782608697"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,264.3478260869565 360,264.3478260869565"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,297.3913043478261 360,297.3913043478261"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,330.4347826086956 360,330.4347826086956"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,363.47826086956525 360,363.47826086956525"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,396.52173913043475 360,396.52173913043475"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,429.5652173913043 360,429.5652173913043"></path><path class="link" d="M180,280.8695652173913C270,280.8695652173913 270,462.60869565217394 360,462.60869565217394"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,247.82608695652175 180,247.82608695652175"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,280.8695652173913 180,280.8695652173913"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,324.2391304347826 180,324.2391304347826"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,367.6086956521739 180,367.6086956521739"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,410.97826086956525 180,410.97826086956525"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,454.3478260869565 180,454.3478260869565"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,497.7173913043478 180,497.7173913043478"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,541.0869565217391 180,541.0869565217391"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,584.4565217391305 180,584.4565217391305"></path><path class="link" d="M0,437.82608695652175C90,437.82608695652175 90,627.8260869565217 180,627.8260869565217"></path><g class="node" transform="translate(360,726.9565217391305)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Visualization</text></g><g class="node" transform="translate(360,693.9130434782609)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">operator</text></g><g class="node" transform="translate(360,660.8695652173913)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">legend</text></g><g class="node" transform="translate(360,627.8260869565217)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">events</text></g><g class="node" transform="translate(360,594.7826086956522)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">data</text></g><g class="node" transform="translate(360,561.7391304347826)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">controls</text></g><g class="node" transform="translate(540,594.7826086956522)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">CartesianAxes</text></g><g class="node" transform="translate(540,561.7391304347826)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">AxisLabel</text></g><g class="node" transform="translate(540,528.695652173913)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">AxisGridLine</text></g><g class="node" transform="translate(540,495.6521739130435)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Axis</text></g><g class="node" transform="translate(540,462.60869565217394)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Axes</text></g><g class="node" transform="translate(360,528.695652173913)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">axis</text></g><g class="node" transform="translate(180,627.8260869565217)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">vis</text></g><g class="node" transform="translate(180,584.4565217391305)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">util</text></g><g class="node" transform="translate(180,541.0869565217391)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">scale</text></g><g class="node" transform="translate(180,497.7173913043478)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">query</text></g><g class="node" transform="translate(180,454.3478260869565)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">physics</text></g><g class="node" transform="translate(180,410.97826086956525)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">flex</text></g><g class="node" transform="translate(180,367.6086956521739)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">display</text></g><g class="node" transform="translate(180,324.2391304347826)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">data</text></g><g class="node" transform="translate(360,462.60869565217394)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Tween</text></g><g class="node" transform="translate(360,429.5652173913043)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">TransitionEvent</text></g><g class="node" transform="translate(360,396.52173913043475)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Transitioner</text></g><g class="node" transform="translate(360,363.47826086956525)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Transition</text></g><g class="node" transform="translate(360,330.4347826086956)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Sequence</text></g><g class="node" transform="translate(360,297.3913043478261)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Scheduler</text></g><g class="node" transform="translate(360,264.3478260869565)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Pause</text></g><g class="node" transform="translate(360,231.30434782608697)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Parallel</text></g><g class="node" transform="translate(360,198.26086956521738)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">ISchedulable</text></g><g class="node" transform="translate(540,297.3913043478261)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">RectangleInterpolator</text></g><g class="node" transform="translate(540,264.3478260869565)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">PointInterpolator</text></g><g class="node" transform="translate(540,231.30434782608697)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">ObjectInterpolator</text></g><g class="node" transform="translate(540,198.26086956521738)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">NumberInterpolator</text></g><g class="node" transform="translate(540,165.2173913043478)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">MatrixInterpolator</text></g><g class="node" transform="translate(540,132.17391304347825)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Interpolator</text></g><g class="node" transform="translate(540,99.13043478260869)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">DateInterpolator</text></g><g class="node" transform="translate(540,66.08695652173913)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">ColorInterpolator</text></g><g class="node" transform="translate(540,33.04347826086956)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">ArrayInterpolator</text></g><g class="node" transform="translate(360,165.2173913043478)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">interpolate</text></g><g class="node" transform="translate(360,132.17391304347825)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">FunctionSequence</text></g><g class="node" transform="translate(360,99.13043478260869)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="10" dy=".35em" text-anchor="start" style="fill-opacity: 1;">Easing</text></g><g class="node" transform="translate(180,280.8695652173913)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">animate</text></g><g class="node" transform="translate(180,247.82608695652175)"><circle r="4.5" style="fill: rgb(176, 196, 222);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">analytics</text></g><g class="node" transform="translate(0,437.82608695652175)"><circle r="4.5" style="fill: rgb(255, 255, 255);"></circle><text x="-10" dy=".35em" text-anchor="end" style="fill-opacity: 1;">flare</text></g></g></svg></div>
+    <script type="text/javascript">
+
+var m = [20, 120, 20, 120],
+    w = 1280 - m[1] - m[3],
+    h = 800 - m[0] - m[2],
+    i = 0,
+    root;
+
+var tree = d3.layout.tree()
+    .size([h, w]);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var vis = d3.select("#body").append("svg:svg")
+    .attr("width", w + m[1] + m[3])
+    .attr("height", h + m[0] + m[2])
+  .append("svg:g")
+    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+d3.json("flare.json", function(json) {
+  root = json;
+  root.x0 = h / 2;
+  root.y0 = 0;
+
+  function toggleAll(d) {
+    if (d.children) {
+      d.children.forEach(toggleAll);
+      toggle(d);
+    }
+  }
+
+  // Initialize the display to show a few nodes.
+  root.children.forEach(toggleAll);
+  toggle(root.children[1]);
+  toggle(root.children[1].children[2]);
+  toggle(root.children[9]);
+  toggle(root.children[9].children[0]);
+
+  update(root);
+});
+
+function update(source) {
+  var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse();
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = vis.selectAll("g.node")
+      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("svg:g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+      .on("click", function(d) { toggle(d); update(d); });
+
+  nodeEnter.append("svg:circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeEnter.append("svg:text")
+      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+      .attr("r", 4.5)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+      .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+      .remove();
+
+  nodeExit.select("circle")
+      .attr("r", 1e-6);
+
+  nodeExit.select("text")
+      .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = vis.selectAll("path.link")
+      .data(tree.links(nodes), function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("svg:path", "g")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        var o = {x: source.x0, y: source.y0};
+        return diagonal({source: o, target: o});
+      })
+    .transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition links to their new position.
+  link.transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y};
+        return diagonal({source: o, target: o});
+      })
+      .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+// Toggle children.
+function toggle(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+}
+
+    </script>
+  
+
+</body></html>
