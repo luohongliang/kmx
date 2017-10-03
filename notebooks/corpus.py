@@ -11,7 +11,7 @@ from collections import defaultdict
 
 # load in the configuration file
 from configparser import ConfigParser as ConfigParser
-config_file = r"/home/hongliang/inpho/kmx/kmx_Nic_lhl.ini" 
+config_file = r"/home/hongliang/inpho/kmx/kmx_lhl.ini" 
 config = ConfigParser({
         'topic_range': None,
         'topics': None,
